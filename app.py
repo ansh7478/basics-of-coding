@@ -47,6 +47,25 @@ def show_recipe(name, data):
         # Get the recipe list names to show in the dropdown
         recipe_name = list(recipes.keys())
 
+        # Only show the dropdown if there are available recipes
+        if recipe_name:
+            selected_recipe = st.selectbox( "Recipes Available:", recipe_names)
+
+            # This is conditional statement: code inside runs only if the button is clicked
+            if st.button("Show Recipe"):
+                show_recipe(selected_recipe, recipes)
+        else:
+            st.info("There are no recipes yet. Add a new one below!")
+
+        st.markdown("-")
+
+        # - Section to Add a New Recipe (NEW FUNCTIONALLITY) -
+        st.header("➕ Add a New Recipe")
+
+
+    
+
+
 
 
 
