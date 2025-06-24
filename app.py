@@ -62,6 +62,21 @@ def show_recipe(name, data):
         # - Section to Add a New Recipe (NEW FUNCTIONALLITY) -
         st.header("➕ Add a New Recipe")
 
+        # Create text fields for the the user to input their new recipe details
+        new_recipe_name = st.text_input("Recipe Name")
+        new_recipe_ingredients = st.text_area("Ingredients (separated by commas)")
+        new_recipe_steps = st.text_area("Steps (one per line)")
+
+        # The button to trigger saving the new recipe
+        if st.button("Save New Recipe"):
+            # A nested conditional to check if all fields have filled out
+            if new_recipe_name and new_recipe_ingredients and new_recipe_steps:
+                # Add the new  recipe data to the main 'recipes' dictionary
+                recipes[new_recipe_name] = {
+                    "ingredients": new_recipe_ingredients,
+                    "steps": new_recipe_steps
+                }
+
 
     
 
