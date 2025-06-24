@@ -77,6 +77,24 @@ def show_recipe(name, data):
                     "steps": new_recipe_steps
                 }
 
+                # Call the save_recipes functipn to write the updated dictionary to the file
+                save_recipes(recipe)
+
+                # Show a success message to the user
+                st.success(f"Recipe '{new_recipe_name}' saved successfully!")
+                st.info("Refresh the page to see the new recipe in the dropdown list.")
+            else:
+                # Show an error message if any field is empty
+                st.error("Please fill in the all fields to save the recipe.")
+
+        st.markdown("-")
+
+        # Optional: Display all recipe names in an expandable section
+        with st.expander("📃 View All Recipe Names"):
+            # Reload the recipe name in case a new one was just added
+            updated_recipe_name = list(load_recipes(). keys())
+
+
 
     
 
