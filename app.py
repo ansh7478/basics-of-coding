@@ -13,7 +13,8 @@ def load_recipes():
         return {}
     
     # Function to save data to JSON file
-    def save_recipes(data):
+def save_recipes(data):
+        
         # Opens the file in "write" mode ('w'), which overwrites the file
         with open("recipes.json", "w") as file:
             # Dump the python dictionary 'data' into the file as a JSON string
@@ -22,16 +23,29 @@ def load_recipes():
 # - UI Display Functions -
 
 # - Function to display the details of a single recipe
+
 def show_recipe(name, data):
-    st.subheader(name)
-    st.markdown("### 🧂 Ingredients:")
-    st.write(data[name]["Ingredients"])
-    st.markdown("### 📝 Steps:")
-    st.write(data[name]["Steps:"])
+    st.header(name)
+    
+    if "Ingredients" in data[name]:
+        st.subheader("Ingredients")
+        st.write(data[name]["Ingredients"])
+    else:
+        st.subheader("Ingredients")
+        st.write("No ingredients listed for this recipe.")
+    
+    if "Steps" in data[name]:
+        st.subheader("Steps")
+        st.write(data[name]["Steps"])
+    else:
+        st.subheader("Steps")
+        st.write("No steps provided for this recipe.")
+
 
     # - Logic for Main Application -
 
-    def main():
+def main():
+        
         # Set title and welcome message for app
         st.title("📖 Indian Recipe Book")
         st.markdown("welcome to the Indian Recipe Book🍲")
@@ -45,15 +59,15 @@ def show_recipe(name, data):
         st.header("🔍 View an Existing Recipe")
 
         # Get the recipe list names to show in the dropdown
-        recipe_name = list(recipes.keys())
+        recipe_name = list(recipe.keys())
 
         # Only show the dropdown if there are available recipes
         if recipe_name:
-            selected_recipe = st.selectbox( "Recipes Available:", recipe_names)
+            selected_recipe = st.selectbox( "Recipes Available:", recipe_name)
 
             # This is conditional statement: code inside runs only if the button is clicked
             if st.button("Show Recipe"):
-                show_recipe(selected_recipe, recipes)
+                show_recipe(selected_recipe, recipe)
         else:
             st.info("There are no recipes yet. Add a new one below!")
 
@@ -72,7 +86,7 @@ def show_recipe(name, data):
             # A nested conditional to check if all fields have filled out
             if new_recipe_name and new_recipe_ingredients and new_recipe_steps:
                 # Add the new  recipe data to the main 'recipes' dictionary
-                recipes[new_recipe_name] = {
+                recipe[new_recipe_name] = {
                     "ingredients": new_recipe_ingredients,
                     "steps": new_recipe_steps
                 }
@@ -93,6 +107,20 @@ def show_recipe(name, data):
         with st.expander("📃 View All Recipe Names"):
             # Reload the recipe name in case a new one was just added
             updated_recipe_name = list(load_recipes(). keys())
+
+            # Check if the list is not empty
+            if updated_recipe_name:
+                # This is a loop: it iterates through each name in the list
+                for i, name in enumerate(updated_recipe_name, 1):
+                    st.write(f"{i}. {name}")
+            else:
+                st.write("No recipes have been saved yet.")
+
+
+# This enures the main() function runs when the script is executed
+if __name__ == "__main__":
+    main()
+
 
 
 

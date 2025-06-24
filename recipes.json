@@ -1,0 +1,42 @@
+{
+  "Dal Makhni": {
+    "Ingredients": "Urad dal, Rajma, Butter, Cream, Tomatoes, Garlic, Ginger, Spices",
+    "Steps": "1. Soak dal and rajma overnight\n2. Pressure cook until soft\n3. Make tadka with garlic, ginger, tomato\n4. Add cooked dal, simmer with cream and butter"
+  },
+  "Aloo Jeera": {
+    "Ingredients": "Potatoes, Cumin seeds, Turmeric, Green chili, Salt",
+    "Steps": "1. Boil potatoes and cut into cubes\n2. Heat oil, add cumin seeds\n3. Add potatoes and spices\n4. Stir-fry and serve hot"
+  },
+  "Shahi Paneer": {
+    "Ingredients": "Paneer, Cream, Cashew paste, Onions, Tomatoes, Spices",
+    "Steps": "1. Make paste with onion, tomato, cashew\n2. Cook with spices and cream\n3. Add paneer and simmer"
+  },
+  "Mix Veg": {
+    "Ingredients": "Carrot, Beans, Peas, Cauliflower, Spices, Ghee",
+    "Steps": "1. Chop vegetables\n2. Stir-fry in ghee\n3. Add spices and cook until tender"
+  },
+  "Butter Chicken": {
+    "Ingredients": "Chicken, Butter, Cream, Tomatoes, Spices",
+    "Steps": "1. Marinate chicken\n2. Cook in butter\n3. Add tomato puree and cream\n4. Simmer"
+  },
+  "Aloo Naan": {
+    "Ingredients": "Flour, Boiled Potatoes, Coriander, Spices",
+    "Steps": "1. Make dough\n2. Fill with mashed potato mix\n3. Roll and cook on tawa"
+  },
+  "Biryani": {
+    "Ingredients": "Basmati rice, Chicken/Vegetables, Yogurt, Spices",
+    "Steps": "1. Cook rice and meat/veg separately\n2. Layer and cook on low flame"
+  },
+  "Sooji ka Halwa": {
+    "Ingredients": "Sooji, Sugar, Ghee, Water, Cardamom",
+    "Steps": "1. Roast sooji in ghee\n2. Add sugar water mix\n3. Cook until thick"
+  },
+  "Sarson ka Saag": {
+    "Ingredients": "Sarson leaves, Palak, Makki flour, Spices",
+    "Steps": "1. Boil greens and blend\n2. Cook with garlic, onion, makki flour\n3. Serve with makki roti"
+  },
+  "Matar Paneer": {
+    "Ingredients": "Paneer, Peas, Tomatoes, Onion, Spices",
+    "Steps": "1. Fry paneer\n2. Make gravy\n3. Add peas and paneer\n4. Cook for 10 mins"
+  }
+}
