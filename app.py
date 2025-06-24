@@ -18,3 +18,19 @@ def load_recipes():
         with open("recipes.json", "w") as file:
             # Dump the python dictionary 'data' into the file as a JSON string
             json.dump(data,file, indent=2)
+
+# - UI Display Functions -
+
+# - Function to display the details of a single recipe
+def show_recipe(name, data):
+    st.subheader(name)
+    st.markdown("### 🧂 Ingredients:")
+    st.write(data[name]["Ingredients"])
+    st.markdown("### 📝 Steps:")
+    st.write(data[name]["Steps:"])
+
+    # - Logic for Main Application -
+    
+
+
+
