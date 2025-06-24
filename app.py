@@ -30,7 +30,23 @@ def show_recipe(name, data):
     st.write(data[name]["Steps:"])
 
     # - Logic for Main Application -
-    
+
+    def main():
+        # Set title and welcome message for app
+        st.title("📖 Indian Recipe Book")
+        st.markdown("welcome to the Indian Recipe Book🍲")
+
+        # Load the recipes from JSON file at the start
+        recipe = load_recipes()
+
+        st.markdown("-")
+
+        # - Section to View the Existing Recipes (Your Orginal Code) -
+        st.header("🔍 View an Existing Recipe")
+
+        # Get the recipe list names to show in the dropdown
+        recipe_name = list(recipes.keys())
+
 
 
 
