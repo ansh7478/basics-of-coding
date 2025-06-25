@@ -1,9 +1,7 @@
 import streamlit as st
 import json
 
-# -Data handling Functions-
-
-# Functions to load data from JSON file
+# This functions help to load data from JSON file
 def load_recipes():
     try:
         with open("recipes.json", "r") as file:
@@ -12,17 +10,17 @@ def load_recipes():
         
         return {}
     
-    # Function to save data to JSON file
+    # This function helps to save data to JSON file
 def save_recipes(data):
         
-        # Opens the file in "write" mode ('w'), which overwrites the file
+        # Opens the file in "write" mode ('w'), which will overwrites the file
         with open("recipes.json", "w") as file:
-            # Dump the python dictionary 'data' into the file as a JSON string
+            # Dump the python dictionary with 'data' into the file as a JSON string
             json.dump(data,file, indent=2)
 
-# - UI Display Functions -
+# UI Functions 
 
-# - Function to display the details of a single recipe
+# Single recipe will be displayed with this function
 
 def show_recipe(name, data):
     st.header(name)
@@ -42,30 +40,30 @@ def show_recipe(name, data):
         st.write("No steps provided for this recipe.")
 
 
-    # - Logic for Main Application -
+    #  This will be help for logic in Main Application 
 
 def main():
         
-        # Set title and welcome message for app
-        st.title("📖 Indian Recipe Book")
-        st.markdown("welcome to the Indian Recipe Book🍲")
+        # We will set title and welcome message for users in the app
+        st.title("Indian Recipe Book")
+        st.markdown("welcome to the Indian Recipe Book")
 
-        # Load the recipes from JSON file at the start
+        # Then load the recipes from JSON file at the start
         recipe = load_recipes()
 
         st.markdown("-")
 
-        # - Section to View the Existing Recipes (Your Orginal Code) -
-        st.header("🔍 View an Existing Recipe")
+        # Existing recipes will be displayed with this section 
+        st.header("View an Existing Recipe")
 
-        # Get the recipe list names to show in the dropdown
+        # Get the names of recipe list to show in the dropdown menu
         recipe_name = list(recipe.keys())
 
-        # Only show the dropdown if there are available recipes
+        #  If there are available recipes then only it will show the dropdown
         if recipe_name:
             selected_recipe = st.selectbox( "Recipes Available:", recipe_name)
 
-            # This is conditional statement: code inside runs only if the button is clicked
+            # This will run only run if the button will be clicked because this is conditional statement 
             if st.button("Show Recipe"):
                 show_recipe(selected_recipe, recipe)
         else:
@@ -73,8 +71,8 @@ def main():
 
         st.markdown("-")
 
-        # - Section to Add a New Recipe (NEW FUNCTIONALLITY) -
-        st.header("➕ Add a New Recipe")
+        # This is the section to add a New Recipe 
+        st.header(" Add a New Recipe")
 
         # Create text fields for the the user to input their new recipe details
         new_recipe_name = st.text_input("Recipe Name")
@@ -103,21 +101,21 @@ def main():
 
         st.markdown("-")
 
-        # Optional: Display all recipe names in an expandable section
-        with st.expander("📃 View All Recipe Names"):
+        # This will display all recipe names in an expandable section
+        with st.expander("View All Recipe Names"):
             # Reload the recipe name in case a new one was just added
             updated_recipe_name = list(load_recipes(). keys())
 
             # Check if the list is not empty
             if updated_recipe_name:
-                # This is a loop: it iterates through each name in the list
+                # This is a loop will help it iterates all the names through the list
                 for i, name in enumerate(updated_recipe_name, 1):
                     st.write(f"{i}. {name}")
             else:
                 st.write("No recipes have been saved yet.")
 
 
-# This enures the main() function runs when the script is executed
+#  When the script is executed this fucntion will ensures that it runs
 if __name__ == "__main__":
     main()
 
