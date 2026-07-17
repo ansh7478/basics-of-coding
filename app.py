@@ -18,7 +18,7 @@ def save_recipes(data):
             # Dump the python dictionary with 'data' into the file as a JSON string
             json.dump(data,file, indent=2)
 
-# UI Functions 
+# UI Functions
 
 # Single recipe will be displayed with this function
 
@@ -40,7 +40,7 @@ def show_recipe(name, data):
         st.write("No steps provided for this recipe.")
 
 
-    #  This will be help for logic in Main Application 
+    #  This will help us for logic in Main Application
 
 def main():
         
@@ -72,7 +72,8 @@ def main():
         st.markdown("-")
 
         # This is the section to add a New Recipe 
-        st.header(" Add a New Recipe")
+
+        st.subheader(" Add a New Recipe")
 
         # Create text fields for the the user to input their new recipe details
         new_recipe_name = st.text_input("Recipe Name")
